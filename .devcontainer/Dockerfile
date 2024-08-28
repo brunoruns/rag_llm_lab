@@ -14,3 +14,15 @@ RUN if [ -f "/tmp/conda-tmp/environment.yml" ]; then umask 0002 && /opt/conda/bi
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
+
+# this might be necessary below
+
+# Install any needed packages specified in requirements.txt
+RUN bash install_ollama.sh
+RUN bash setup_dependencies.sh
+
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# Run app.py when the container launches
+CMD ["python", "app.py"]

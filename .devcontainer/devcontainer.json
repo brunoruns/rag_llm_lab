@@ -6,7 +6,7 @@
 		"context": "..",
 		"dockerfile": "Dockerfile"
 	},
-    "postCreateCommand": "./setup-ssh.sh && ./install_ollama.sh"
+    "postCreateCommand": "./setup-ssh.sh"
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
