@@ -18,11 +18,27 @@ RUN if [ -f "/tmp/conda-tmp/environment.yml" ]; then umask 0002 && /opt/conda/bi
 # this might be necessary below
 
 # Install any needed packages specified in requirements.txt
-RUN bash install_ollama.sh
-RUN bash setup_dependencies.sh
+RUN curl -fsSL https://ollama.com/install.sh | sh
+# RUN bash setup_dependencies.sh
+# install chromadb
+RUN pip install --q chromadb
+
+#install langchain tools
+RUN pip install --q unstructured langchain langchain-text-splitters
+RUN pip install --q "unstructured[all-docs]"
+RUN pip install --q langchain_community
+
+#install flask
+RUN pip install --q flask
+
+# pull ollama models
+#RUN ollama pull mistral
+#RUN ollama pull nomic-embed-text
 
 # Make port 80 available to the world outside this container
-EXPOSE 80
+#EXPOSE 80
 
+#run ollama when the container starts
+#CMD ["ollama", "serve"]
 # Run app.py when the container launches
-CMD ["python", "app.py"]
+#CMD ["python", "app.py"]
