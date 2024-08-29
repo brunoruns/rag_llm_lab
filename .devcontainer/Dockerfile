@@ -31,9 +31,11 @@ RUN pip install --q langchain_community
 #install flask
 RUN pip install --q flask
 
-# pull ollama models
-#RUN ollama pull mistral
-#RUN ollama pull nomic-embed-text
+#execute permissions
+#COPY setup-ollama.sh /tmp/setup-ollama.sh
+#RUN chmod +x /tmp/setup-ollama.sh
+# RUN ollama pull mistral
+#RUN /tmp/setup-ollama.sh
 
 # Make port 80 available to the world outside this container
 #EXPOSE 80
