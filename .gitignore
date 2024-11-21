@@ -2,3 +2,6 @@ venv/*
 opgave/venv/*
 opgave/chroma/*
 opgave/__pycache__/*
+local-rag/venv/*
+local-rag/chroma/*
+local-rag/__pycache__/*
