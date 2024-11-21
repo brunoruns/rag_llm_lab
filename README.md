@@ -1,7 +1,7 @@
 # rag_llm_lab
-2 hour lab on the workings of vector databases and their applications in a retrieval augmented generation (RAG) LLM.
+2 hour labo devcontainer
 
 ## Devcontainer
-This repository is available as a devcontainer. On inititialisation, it will spit out a ssh key that can be added to a remote repo to continue working if you are the owner of the repository!
+This repository is available as a devcontainer. 
 
-## Vector Databases
+In het mapje opgave vinden jullie de notebook van dit labo. In de rest van deze devcontainer staan dingen die je kan gebruiken indien nodig.
