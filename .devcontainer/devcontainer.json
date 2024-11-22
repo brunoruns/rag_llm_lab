@@ -1,23 +1,18 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/miniconda
 {
-	"name": "Miniconda (Python 3)",
+	"name": "Python LLM RAG DevContainer",
 	"build": {
-		"context": "..",
-		"dockerfile": "Dockerfile"
+	  "dockerfile": "Dockerfile"
 	},
 	"settings": {
-		"terminal.integrated.shell.linux": "/bin/bash"
+	  "python.defaultInterpreterPath": "/usr/bin/python3",
+	  "editor.formatOnSave": true
 	},
 	"extensions": [
-		"ms-python.python"
+	  "ms-python.python",
+	  "ms-toolsai.jupyter",
+	  "ms-vscode.vscode-node-essentials"
 	],
-	"remoteUser": "vscode",
-	"runArgs": [
-		"--network=bridge"
-	],
-	"forwardPorts": [
-		8080
-	],
-	"postCreateCommand": "./setup-ssh.sh && ./setup-ollama.sh"
-}
+	"postCreateCommand": "pip install chromadb && pip install --q unstructured langchain langchain-text-splitters 'unstructured[all-docs]' langchain_community flask",
+	"remoteUser": "vscode"
+  }
+  
