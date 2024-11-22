@@ -6,7 +6,7 @@ Deze repository is beschikbaar als devcontainer.
 
 ## Alternatief: lokale installatie
 Indien de devcontainer niet werkt; kunnen jullie de tools ook lokaal installeren. Zorg dat je systeem volgende tools heeft:
-- python
+- python, best in een aparte virtuele omgeving (venv)
 - curl, of postman
 - chromadb, te installeren met pip install chromadb
 - langchanin, flask packages, te installeren met pip:
