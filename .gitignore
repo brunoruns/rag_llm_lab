@@ -1,7 +1,36 @@
-venv/*
-opgave/venv/*
-opgave/chroma/*
-opgave/__pycache__/*
-local-rag/venv/*
-local-rag/chroma/*
-local-rag/__pycache__/*
+# Environments
+venv/
+.venv/
+opgave/venv/
+opgave/.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ChromaDB data
+opgave/chroma/
+chroma/
+chroma_test/
+
+# Environment files (bevat .env, niet .env.example)
+.env
+!.env.example
+!opgave/.env.example
+
+# Temp folders
+opgave/_temp/
+_temp/
+
+# Test / lint artifacts
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

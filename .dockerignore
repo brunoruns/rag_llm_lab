@@ -1,0 +1,18 @@
+# Houd de Docker build-context klein en snel
+.git
+**/__pycache__
+**/*.pyc
+**/.venv
+**/venv
+.pytest_cache
+.ruff_cache
+*.egg-info
+
+# Runtime data / secrets (niet in de image)
+.env
+**/.env
+opgave/chroma
+chroma
+chroma_test
+opgave/_temp
+_temp

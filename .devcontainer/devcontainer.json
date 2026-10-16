@@ -1,18 +1,36 @@
 {
-	"name": "Python LLM RAG DevContainer",
-	"build": {
-	  "dockerfile": "Dockerfile"
-	},
-	"settings": {
-	  "python.defaultInterpreterPath": "/usr/bin/python3",
-	  "editor.formatOnSave": true
-	},
-	"extensions": [
-	  "ms-python.python",
-	  "ms-toolsai.jupyter",
-	  "ms-vscode.vscode-node-essentials"
-	],
-	"postCreateCommand": "pip install chromadb && pip install --q unstructured langchain langchain-text-splitters 'unstructured[all-docs]' langchain_community flask",
-	"remoteUser": "vscode"
-  }
-  
+    "name": "RAG LLM Labo DevContainer",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.terminal.activateEnvironment": true,
+                "editor.formatOnSave": true,
+                "notebook.output.textLineLimit": 100
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.vscode-jupyter-cell-tags"
+            ]
+        }
+    },
+    "forwardPorts": [11434, 5000],
+    "portsAttributes": {
+        "11434": {
+            "label": "Ollama API",
+            "onAutoForward": "notify"
+        },
+        "5000": {
+            "label": "Flask server",
+            "onAutoForward": "notify"
+        }
+    },
+    "postStartCommand": "bash ${containerWorkspaceFolder}/scripts/devcontainer-setup.sh",
+    "remoteUser": "vscode"
+}

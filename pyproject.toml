@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta:__legacy__"
+
+[project]
+name = "rag-llm-lab"
+version = "3.0.0"
+description = "RAG LLM Labo - Bouw je eigen chatbot met Retrieval Augmented Generation"
+readme = "README.md"
+authors = [
+    { name = "Ap Hogeschool", email = "bruno.herman@ap.be" },
+]
+requires-python = ">=3.10"
+# Enige bron van waarheid voor dependencies.
+# Studenten installeren met:  pip install -r requirements.txt   (die verwijst hiernaar)
+dependencies = [
+    "chromadb>=1.0,<2",
+    "langchain>=1.0,<2",
+    # Let op: langchain-community wordt NIET mee-versieerd met langchain 1.x
+    "langchain-community>=0.4,<1",
+    "langchain-text-splitters>=1.0,<2",
+    "langchain-chroma>=1.0,<2",
+    "langchain-ollama>=1.0,<2",
+    "pymupdf>=1.24",
+    "flask>=3.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "nbformat>=5.10",
+    "ruff>=0.6",
+]
+
+[tool.setuptools]
+# Geen Python-packages in dit project zelf; enkel de lab-mapjes en scripts.
+py-modules = []

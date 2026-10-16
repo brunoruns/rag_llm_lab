@@ -1,0 +1,11 @@
+# =====================================================
+# RAG LLM Labo - dependencies
+# =====================================================
+# Enige bron van waarheid is pyproject.toml.
+# Dit bestand installeert het project + al zijn dependencies:
+#
+#   pip install -r requirements.txt
+#
+# Voor ontwikkeling/CI (testen, notebook genereren, linten):
+#   pip install -e ".[dev]"
+-e .
