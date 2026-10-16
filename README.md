@@ -1,5 +1,7 @@
 # 🧠 RAG LLM Labo — Bouw je eigen chatbot met Retrieval Augmented Generation
 
+Deze repository is gebaseerd op een tutorial en daarna aangepast met behulp van AI.
+
 > **2-uur labo** | AP Hogeschool | Modern RAG met lokale LLMs
 
 In dit labo bouw je een **eigen chatbot** die antwoorden kan geven op basis van **eigen documenten** (PDF). Geen cloud-abonnement, geen API-sleutel, geen internet nodig. Alles draait lokaal op je eigen machine.
